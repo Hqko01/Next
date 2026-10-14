@@ -1,7 +1,7 @@
 import DownloaderArea from "@/components/downloaderArea";
 import Link from "next/link";
 
-async function getGithubStars(): Promise<number | null> {
+async function getGithubStars(): Promise<{ star: number; update: string } | null> {
   const api = process.env.API;
   if (!api) return null;
 
@@ -16,7 +16,8 @@ async function getGithubStars(): Promise<number | null> {
     if (!response.ok) return null;
 
     const data = await response.json();
-    return data.stargazers_count;
+
+    return { "star": data.stargazers_count, "update": data.updated_at };
   } catch {
     return null;
   }
@@ -65,7 +66,7 @@ const ArrowIcon = () => (
 );
 
 export default async function Home() {
-  const stars = await getGithubStars();
+  const githubData = await getGithubStars();
 
   return (
     <main className="hero-shell relative flex min-h-screen flex-col overflow-hidden">
@@ -104,7 +105,7 @@ export default async function Home() {
           <GithubIcon />
           <span>Star on GitHub</span>
 
-          {stars !== null && (
+          {githubData !== null && (
             <span className="github-stars">
               <svg
                 viewBox="0 0 24 24"
@@ -114,17 +115,27 @@ export default async function Home() {
               >
                 <path d="m12 2 3.1 6.3 6.9 1-5 4.9 1.2 6.9L12 17.8l-6.2 3.3L7 14.2 2 9.3l6.9-1L12 2Z" />
               </svg>
-              <span>{stars}</span>
+              <span>{githubData.star}</span>
             </span>
           )}
         </a>
       </header>
 
       {/* Downloader Area */}
-     <DownloaderArea />
+      <DownloaderArea />
 
-      <footer className="relative z-10 border-t border-white/6 px-6 py-6 text-center text-xs text-zinc-500">
-        Open source, made with care. © 2026 LinkToMP4
+      <footer className="flex flex-row justify-between max-sm:flex-col max-sm:justify-center max-sm: items-center max-sm:gap-8 relative z-10 border-t border-white/6 px-6 py-6 text-center text-xs text-zinc-500">
+        <div className="left flex flex-1 justify-start items-center text-md">
+          <p>Last updated: {githubData?.update}</p>
+        </div>
+        <div className="middle flex flex-1 justify-center items-center text-md">
+          <p>Open source, made with care. © 2026 LinkToMP4</p>
+        </div>
+        <div className="right flex flex-1 justify-end items-center">
+          <a href="https://liriandev.com" target="_blank" rel="noreferrer" className="font-[tanNimbus] text-lg">
+            Liriandev
+          </a>
+        </div>
       </footer>
     </main>
   );

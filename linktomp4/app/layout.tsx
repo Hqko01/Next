@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Montserrat, Roboto } from "next/font/google";
+import localFont from "next/font/local";
 import "./globals.css";
 
 const geistSans = Geist({
@@ -20,6 +21,13 @@ const roboto = Roboto({
   variable: "--font-roboto",
 });
 
+const tanNimbus = localFont({
+  src: "../public/fonts/tan-nimbus.ttf",
+  variable: "--font-tan-nimbus",
+  display: "swap",
+});
+
+
 export const metadata: Metadata = {
   title: "Link to MP4",
   description: "Convert links to MP4 format",
@@ -29,7 +37,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${roboto.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} ${montserrat.variable} ${roboto.variable} ${tanNimbus.variable} h-full antialiased`}
     >
       <head>
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
