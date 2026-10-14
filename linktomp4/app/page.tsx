@@ -1,4 +1,3 @@
-
 import Link from "next/link";
 
 async function getGithubStars(): Promise<number | null> {
@@ -141,7 +140,7 @@ export default async function Home() {
 
             <Link
               href="/download"
-              className="group flex shrink-0 items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-4 font-semibold text-zinc-950 transition hover:bg-emerald-300"
+              className="group flex shrink-0 items-center justify-center gap-3 rounded-xl bg-emerald-400 px-6 py-3 font-semibold text-zinc-950 transition hover:bg-emerald-300"
             >
               Get started
               <ArrowIcon />
