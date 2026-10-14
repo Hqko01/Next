@@ -126,7 +126,7 @@ export default async function Home() {
 
       <footer className="flex flex-row justify-between max-sm:flex-col max-sm:justify-center max-sm: items-center max-sm:gap-8 relative z-10 border-t border-white/6 px-6 py-6 text-center text-xs text-zinc-500">
         <div className="left flex flex-1 justify-start items-center text-md">
-          <p>Last updated: {githubData?.update}</p>
+          <p>Last updated: {githubData?.update} | Version: {process.env.VERSION}</p>
         </div>
         <div className="middle flex flex-1 justify-center items-center text-md">
           <p>Open source, made with care. © 2026 LinkToMP4</p>
