@@ -124,7 +124,7 @@ export default async function Home() {
         {/* URL input preview */}
         <div className="url-card mt-11 w-full max-w-2xl p-2">
           <div className="flex flex-col gap-2 sm:flex-row">
-            <div className="flex min-w-0 flex-1 items-center gap-3 px-4 py-3">
+            <div className="flex min-w-0 flex-1 items-center gap-3 px-4 py-1">
               <svg
                 viewBox="0 0 24 24"
                 fill="none"
@@ -136,9 +136,7 @@ export default async function Home() {
                 <path d="M10 13a5 5 0 0 0 7.07 0l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.72" />
                 <path d="M14 11a5 5 0 0 0-7.07 0l-3 3a5 5 0 0 0 7.07 7.07l1.72-1.72" />
               </svg>
-              <span className="truncate text-left text-sm text-zinc-500 sm:text-base">
-                Paste your video page URL here...
-              </span>
+              <input type="text" placeholder="Paste your video page URL here..." className="outline-none w-full h-full p-2 truncate text-left text-sm text-zinc-500 sm:text-base"></input>
             </div>
 
             <Link
