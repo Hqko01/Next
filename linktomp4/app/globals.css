@@ -1,26 +1,281 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  color-scheme: dark;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+* {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  min-height: 100%;
+  background: #080a09;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  margin: 0;
+  background: #080a09;
+  color: #f4f4f5;
   font-family: Arial, Helvetica, sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+.github-stars {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  margin-left: 3px;
+  padding: 5px 8px;
+  border: 1px solid #ffffff12;
+  border-radius: 8px;
+  background: #ffffff08;
+  color: #f4f4f5;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}
+
+
+.hero-shell {
+  isolation: isolate;
+  background:
+    radial-gradient(ellipse at 50% 35%, #10231b 0%, transparent 48%),
+    #080a09;
+}
+
+.hero-grid {
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  opacity: 0.22;
+  background-image:
+    linear-gradient(#ffffff0b 1px, transparent 1px),
+    linear-gradient(90deg, #ffffff0b 1px, transparent 1px);
+  background-size: 54px 54px;
+  mask-image: linear-gradient(to bottom, black, transparent 80%);
+}
+
+.hero-glow {
+  position: absolute;
+  z-index: -1;
+  pointer-events: none;
+  width: 440px;
+  height: 440px;
+  border-radius: 9999px;
+  filter: blur(110px);
+  opacity: 0.16;
+  animation: glow-drift 12s ease-in-out infinite alternate;
+}
+
+.hero-glow-one {
+  top: 12%;
+  left: 8%;
+  background: #10b981;
+}
+
+.hero-glow-two {
+  top: 24%;
+  right: 8%;
+  background: #047857;
+  animation-delay: -5s;
+}
+
+.brand-icon {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  place-items: center;
+  border: 1px solid #34d39940;
+  border-radius: 12px;
+  background: #10b98114;
+  color: #6ee7b7;
+  box-shadow: 0 0 24px #10b98112;
+}
+
+.github-nav {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  border: 1px solid #ffffff18;
+  border-radius: 9999px;
+  padding: 10px 16px;
+  color: #d4d4d8;
+  font-size: 13px;
+  transition: border-color 180ms, background 180ms;
+}
+
+.github-nav:hover {
+  border-color: #34d39970;
+  background: #ffffff08;
+}
+
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid #34d39930;
+  border-radius: 9999px;
+  background: #10b9810d;
+  padding: 9px 14px;
+  color: #a7f3d0;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.13em;
+}
+
+.status-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #34d399;
+  box-shadow: 0 0 12px #34d399aa;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.hero-title {
+  text-wrap: balance;
+}
+
+.gradient-text {
+  background: linear-gradient(100deg,
+      #ecfdf5 0%,
+      #6ee7b7 35%,
+      #10b981 68%,
+      #a7f3d0 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.url-card {
+  border: 1px solid #ffffff18;
+  border-radius: 18px;
+  background: #ffffff08;
+  box-shadow:
+    0 20px 80px #00000040,
+    inset 0 1px 0 #ffffff0b;
+  backdrop-filter: blur(20px);
+  transition: border-color 200ms, box-shadow 200ms;
+}
+
+.url-card:focus-within,
+.url-card:hover {
+  border-color: #34d39950;
+  box-shadow:
+    0 20px 80px #00000040,
+    0 0 40px #10b9810b;
+}
+
+.feature-check {
+  display: grid;
+  width: 19px;
+  height: 19px;
+  place-items: center;
+  border: 1px solid #34d39935;
+  border-radius: 50%;
+  background: #10b98112;
+  color: #6ee7b7;
+  font-size: 11px;
+}
+
+.preview-card {
+  overflow: hidden;
+  border: 1px solid #ffffff12;
+  border-radius: 20px;
+  background: linear-gradient(145deg, #ffffff08, #ffffff03);
+  box-shadow:
+    0 30px 100px #00000030,
+    inset 0 1px 0 #ffffff08;
+  backdrop-filter: blur(18px);
+  animation: card-enter 800ms 150ms both;
+}
+
+.format-row {
+  background: #ffffff03;
+  transition: background 180ms, border-color 180ms;
+}
+
+.format-row:hover {
+  border-color: #34d39930;
+  background: #10b98109;
+}
+
+.format-icon {
+  display: grid;
+  width: 40px;
+  height: 40px;
+  place-items: center;
+  border: 1px solid #ffffff0d;
+  border-radius: 12px;
+  background: #ffffff07;
+  color: #6ee7b7;
+}
+
+.animate-fade-in {
+  animation: fade-in 700ms both;
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+
+  50% {
+    opacity: 0.55;
+    transform: scale(0.85);
+  }
+}
+
+@keyframes glow-drift {
+  from {
+    transform: translate3d(-15px, -10px, 0) scale(0.95);
+  }
+
+  to {
+    transform: translate3d(25px, 20px, 0) scale(1.08);
+  }
+}
+
+@keyframes fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes card-enter {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
 }
