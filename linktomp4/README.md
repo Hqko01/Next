@@ -65,3 +65,9 @@ Contributions, bug reports, and feature suggestions are welcome. Feel free to op
 ## License
 
 This project is licensed under the MIT License. See the `LICENSE` file for details.
+
+# Versions
+
+- Version 0.1.1 - <strong>14.10.2026 | 20:00</strong>
+
+Version 0.0.1 searches for the source in the `src` attribute of tags such as `<video>` found on simple websites and returns the source it finds as the result.
