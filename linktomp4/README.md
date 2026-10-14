@@ -1,36 +1,67 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# LinkToMP4
+
+A simple, modern, and open-source web application for extracting available video sources from webpage URLs and providing downloadable video options.
+
+## Overview
+
+LinkToMP4 allows users to submit a webpage URL containing a video, detect accessible video sources, and explore available download options.
+
+The goal is to make video access and downloading straightforward through a clean interface and a simple workflow.
+
+## Features
+
+- **URL-based video detection** — Analyze a submitted webpage to identify accessible video sources.
+- **Download options** — Display available video formats and quality options.
+- **Simple interface** — A clean and responsive user experience.
+- **Open source** — Built for community contributions and further development.
+
+## How It Works
+
+1. Paste a webpage URL into the input field.
+2. LinkToMP4 analyzes the page and searches for accessible video sources.
+3. Available video formats and quality options are displayed.
+4. Select a supported option and download the video.
+
+## Tech Stack
+
+- Next.js
+- React
+- TypeScript
+- Tailwind CSS
 
 ## Getting Started
 
-First, run the development server:
+Clone the repository:
+
+```bash
+git clone https://github.com/Hqko01/Next/tree/main/linktomp4
+cd LinkToMP4
+```
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Start the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Limitations
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Video detection depends on the source website, its accessibility, and the media formats it provides. Some websites may restrict access or require authentication.
 
-## Learn More
+LinkToMP4 is intended for videos that users are authorized to access and download. Users are responsible for respecting copyright laws and the terms of service of source websites.
 
-To learn more about Next.js, take a look at the following resources:
+## Contributing
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Contributions, bug reports, and feature suggestions are welcome. Feel free to open an issue or submit a pull request.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## License
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project is licensed under the MIT License. See the `LICENSE` file for details.
