@@ -57,7 +57,7 @@ export default async function Home() {
       <div className="hero-grid" />
 
       {/* Navbar */}
-      <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-7 md:px-10 gap-4">
+      <header className="relative z-10 mx-auto flex w-full max-w-7xl items-center justify-between px-6 py-7 md:px-10 gap-4 max-[450px]:flex-col max-[450px]:items-center max-[450px]:gap-3">
         <Link href="/" className="flex items-center gap-3">
           <span className="brand-icon">
             <svg
