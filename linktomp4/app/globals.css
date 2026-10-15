@@ -192,6 +192,7 @@ a {
     0 30px 100px #00000030,
     inset 0 1px 0 #ffffff08;
   backdrop-filter: blur(18px);
+  transition: .8s all;
   animation: card-enter 800ms 150ms both;
 }
 

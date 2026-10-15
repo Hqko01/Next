@@ -1,6 +1,8 @@
 import DownloaderArea from "@/components/downloaderArea";
 import Link from "next/link";
 
+const date = new Date();
+
 async function getGithubStars(): Promise<{ star: number; update: string } | null> {
   const api = process.env.API;
   if (!api) return null;
@@ -129,7 +131,7 @@ export default async function Home() {
           <p>Last updated: {githubData?.update} | Version: {process.env.VERSION}</p>
         </div>
         <div className="middle flex flex-1 justify-center items-center text-md">
-          <p>Open source, made with care. © 2026 LinkToMP4</p>
+          <p>Open source, made with care. © {date.getFullYear()} LinkToMP4</p>
         </div>
         <div className="right flex flex-1 justify-end items-center">
           <a href="https://liriandev.com" target="_blank" rel="noreferrer" className="font-[tanNimbus] text-lg">

@@ -47,8 +47,6 @@ export default function VideoExtractor({ onVideosFound }: VideoExtractorProps) {
 
             const data = await response.json();
 
-            console.log(data);
-
             if (!response.ok) {
                 throw new Error(data.error || "Video bulunamadı.");
             }
@@ -59,6 +57,20 @@ export default function VideoExtractor({ onVideosFound }: VideoExtractorProps) {
 
             if (!data.videos?.length) {
                 setError("Bu sayfada desteklenen bir video bulunamadı.");
+            }
+            else {
+                const output = document.querySelector('.preview-card');
+
+                window.scroll({
+                    top: window.scrollY + Number(output?.getBoundingClientRect().top),
+                    behavior: "smooth"
+                })
+
+                output?.classList.add("border-emerald-400!")
+
+                setTimeout(() => {
+                    output?.classList.remove("border-emerald-400!")
+                }, 2000);
             }
         } catch (err) {
             setError(

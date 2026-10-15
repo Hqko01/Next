@@ -53,7 +53,7 @@ export default function DownloaderArea() {
             </div>
 
             {/* Download preview */}
-            <div className="preview-card mt-16 w-full max-w-xl text-left">
+            <div className="preview-card mt-16 w-full max-w-xl text-lef">
                 <div className="flex items-center justify-between border-b border-white/[0.07] px-5 py-4">
                     <div className="flex items-center gap-2">
                         <span className="h-2 w-2 rounded-full bg-emerald-400" />
